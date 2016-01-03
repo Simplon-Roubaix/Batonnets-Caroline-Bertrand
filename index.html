@@ -1,33 +1,76 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Mon titre</title>
-        <meta name="description" content="ma description">
+        <title>Jeu des bâtonnets 2 versions</title>
+        <meta name="description" content="Jeu des bâtonnets, version contre l'ordinateur et version joueur contre joueur">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
+        <link rel="icon" href="favicon.png" />
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="bootstrap.css">
+        <link rel="stylesheet" href="/css/bootstrap.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="js/bootstrap.js"></script>
     </head>
-
-    <header>
-
-    </header>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world!</p>
 
+        <div class="row">
+            <h1>Jeu des bâtonnets contre l'ordinateur</h1>
+            <p>
+              Rentrez un chiffre entre <strong>1</strong> et <strong>3</strong> pour enlever les allumettes du plateau
+            </p>
+
+<!-- affiche le nbre retiré par l'user -->
+<p> Votre tour : </p>  <p id="affichageNbUser"></p>
+            <!-- affiche ce que le pc a retiré (nbPc) -->
+    <!-- <p> L'ordinateur : </p>  -->
+             <p id="affichageNbPc"></p>
+            <!-- input pour que l'user rentre nbSuivant -->
+            <input id="userNbSuivant" type="text" size="20" value="" onkeypress="if(event.keyCode==13){go()}">
+            <!-- /input -->
+            <!-- bouton qui envoie met en marche la fonction -->
+            <button id="button" onclick="go()">Go</button>
+            <!-- bouton -->
+            <!-- affiche le nbre de batonnets restants -->
+            <p id="affichageNbRestant">Il reste 20 allumettes sur le plateau</p>
+            <div id="allumette">
+            </div>
+        </div>
+
+        <hr>
+
+
+        	<div class="row">
+                <h1>Jeu des bâtonnets joueur contre joueur</h1>
+        		<p>
+        			Rentrez un chiffre <strong>1</strong> et <strong>3</strong> pour enlever les allumettes du plateau, chacun votre tour.
+        		</p>
+        		<p id="affichageJoueurjcj">Au joueur 1 de jouer :</p>
+        		<!-- input pour que l'user rentre nbSuivant -->
+                <!-- qui a win  -->
+        		<p id="affichageGagnantjcj"></p>
+
+
+        		<input id="NbSuivantjcj" type="text" size="20" value="" onkeypress="if(event.keyCode==13){gojcj()}">
+        		<!-- /input -->
+        		<!-- bouton qui envoie met en marche la fonction -->
+        		<button id="buttonjcj" onclick="gojcj()">Go</button>
+        		<!-- /bouton -->
+                <!--  affiche le nbre de batonnets restants -->
+                <p id="affichageNbRestantjcj">Il reste 20 allumettes sur le plateau</p>
+        		<div id="allumettejcj">
+        		</div>
+        	</div>
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
